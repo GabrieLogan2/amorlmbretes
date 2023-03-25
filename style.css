@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  height: 3rem; /* ajuste conforme necessário */
+}
+
+header h1 {
+  display: inline-block;
+  line-height: 3rem;
+  margin: 0;
+  text-align: center; /* centralizar o texto */
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 1rem;
+  text-align: center; /* centraliza todo conteúdo dentro da div */
+}
+
+.lembrete {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 auto; /* margem automática nas laterais */
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 70%; 
+}
+
+.lembrete h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.lembrete p {
+  display: none; /* oculta o texto do lembrete */
+}
+
+.lembrete:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.lembrete:active {
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.like-btn:hover {
+  color: #f00;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 80%;
+  margin: 2rem auto;
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.modal.show .modal-content {
+  animation-name: modal-open;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+
+.close {
+  color: #aaa;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.close:hover {
+  color: #333;
+}
+
+@keyframes modal-open {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* estilos padrão */
+/* media query para telas menores */
+
+@media (max-width: 600px) {
+
+  /* ajuste do tamanho e da posição do modal */
+  .modal {
+    height: 100vh;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    margin: 10vh auto;
+  }
+
+  /* ajuste do tamanho e da posição do título do lembrete */
+  .lembrete h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  /* ajuste da largura e da posição do lembrete */
+  .lembrete {
+    width: 90%;
+    margin: 0 auto 1rem auto;
+  }
+}
+
